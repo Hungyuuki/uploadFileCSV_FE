@@ -1,0 +1,46 @@
+<a routerLink="/products">danh sach san pham</a>
+<h1>tao san pham</h1>
+<form [formGroup]="formCreateProduct" (ngSubmit)=" createProduct(formCreateProduct)">
+  <div>
+    <label for="id">ma san pham</label><br>
+    <input type="number" id="id" formControlName="id">
+    <p style="color: red" [hidden]="idCreateControl.valid || !idCreateControl.touched">id is required</p>
+  </div>
+  <div>
+    <label for="name">ten san pham</label><br>
+    <input type="text" id="name" formControlName="name">
+    <div [hidden]="nameCreateControl.valid || !nameCreateControl.touched">
+      <div style="color: red" *ngIf="nameCreateControl.errors?.required">name is required</div>
+      <div style="color: red" *ngIf="nameCreateControl.errors?.minlength">minlength is 6</div>
+      <div style="color: red" *ngIf="nameCreateControl.errors?.maxlength">maxlength is 12</div>
+    </div>
+  </div>
+  <div>
+    <label for="price">gia san pham</label><br>
+    <input type="number" id="price" formControlName="price">
+    <p style="color: red" [hidden]="priceCreateControl.valid || !priceCreateControl.touched">id is required</p>
+  </div>
+
+  <div>
+    <label for="description">mo ta san pham</label><br>
+    <input type="text" id="description" formControlName="description">
+    <p style="color: red" [hidden]="descriptionCreateControl.valid || !descriptionCreateControl.touched">id is
+      required</p>
+  </div>
+  <div>
+    <label for="category">loai san pham</label><br>
+    <select formControlName="categoryId" id="category">
+<!--      // nếu để ngoặc [valua] thi khong can ngoac nhon{{}}-->
+      <option *ngFor="let category of categories" [value]="category.id">
+        {{category.name}}
+      </option>
+    </select>
+  </div>
+  <div>
+    <label for="image">anh san pham</label><br>
+    <mat-spinner *ngIf="checkUploadImage"></mat-spinner>
+    <input type="file" id="image" (change)="changeFile($event)">
+    <img [src]="imageUrl" [hidden]="imageUrl==null" style="width: 400px; height: auto">
+  </div>
+  <button>tao moi</button>
+</form>

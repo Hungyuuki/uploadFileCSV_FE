@@ -1,0 +1,13 @@
+
+<h1>danh sach danh muc</h1>
+<a routerLink="/categories/create">them danh muc</a>
+<table>
+  <tr>
+    <td>id</td>
+    <td>ten danh muc</td>
+  </tr>
+  <tr *ngFor="let category of categories">
+    <td>{{category.id}}</td>
+    <td>{{category.name}}</td>
+  </tr>
+</table>
