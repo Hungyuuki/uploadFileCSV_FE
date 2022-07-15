@@ -1,0 +1,33 @@
+<a routerLink="/incomes">List</a>
+<h2>Edit</h2>
+<form [formGroup]="incomeForm" (ngSubmit)="updateIncome()">
+  <div>
+    <label for="id">id san pham</label><br>
+    <input type="number" id="id" name="name" formControlName="id" disabled>
+    <p style="color: red" [hidden]="idUpdate.valid || !idUpdate.touched">id is required</p>
+  </div>
+  <div>
+    <label for="name">ten san pham</label><br>
+    <input type="text" id="name" name="name" formControlName="name">
+    <div [hidden]="nameUpdate.valid || !nameUpdate.touched">
+      <div style="color: red" *ngIf="nameUpdate.errors?.required">name is required</div>
+      <div style="color: red" *ngIf="nameUpdate.errors?.minlength">minlength is 6</div>
+      <div style="color: red" *ngIf="nameUpdate.errors?.maxlength">maxlength is 12</div>
+    </div>
+  </div>
+  <div>
+    <label for="gender">gender</label><br>
+    <input type="text" id="gender" name="roll" formControlName="gender">
+    <p style="color: red" [hidden]="genderUpdate.valid || !genderUpdate.touched">roll is required</p>
+  </div>
+  <div>
+    <label for="roll">roll</label><br>
+    <input type="text" id="roll" name="roll" formControlName="roll">
+    <p style="color: red" [hidden]="rollUpdate.valid || !rollUpdate.touched">roll is required</p>
+  </div>
+  <div>
+    <label for="income">income</label><br>
+    <input type="text" id="income" name="income" formControlName="income">
+    <p style="color: red" [hidden]="incomeUpdate.valid || !incomeUpdate.touched">description is required</p>
+  </div>
+</form>

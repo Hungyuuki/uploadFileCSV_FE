@@ -1,0 +1,33 @@
+<a routerLink="/incomes">Danh sách thu nhập</a>
+<h2>Create new</h2>
+<form [formGroup]="formCreateIncome" (ngSubmit)=" createIncome(formCreateIncome)">
+  <div>
+    <label for="id">ma nhan vien</label><br>
+    <input type="number" id="id" formControlName="id">
+    <p style="color: red" [hidden]="idCreate.valid || !idCreate.touched">id is required</p>
+  </div>
+  <div>
+    <label for="name">ten nhan vien</label><br>
+    <input type="text" id="name" formControlName="name">
+    <div [hidden]="nameCreate.valid || !nameCreate.touched">
+      <div style="color: red" *ngIf="nameCreate.errors?.required">name is required</div>
+      <div style="color: red" *ngIf="nameCreate.errors?.minlength">minlength is 6</div>
+      <div style="color: red" *ngIf="nameCreate.errors?.maxlength">maxlength is 12</div>
+    </div>
+  </div>
+  <div>
+    <label for="gender">gender</label><br>
+    <input type="text" id="gender" formControlName="gender">
+    <p style="color: red" [hidden]="genderCreate.valid || !genderCreate.touched">is required</p>
+  </div>
+  <div>
+    <label for="roll">roll</label><br>
+    <input type="text" id="roll" formControlName="roll">
+    <p style="color: red" [hidden]="rollCreate.valid || !rollCreate.touched">is required</p>
+  </div>
+  <label for="roll">roll</label><br>
+  <input type="text" id="income" formControlName="income">
+  <p style="color: red" [hidden]="incomeCreate.valid || !incomeCreate.touched">is
+    required</p>
+  <button>Create new</button>
+</form>

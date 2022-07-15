@@ -1,0 +1,23 @@
+
+<a routerLink="/incomes/create">create a new income</a>
+<h1>Income list</h1>
+<table>
+  <tr>
+    <td>stt</td>
+    <td>name</td>
+    <td>gender</td>
+    <td>roll</td>
+    <td>income</td>
+    <td colspan="2">option</td>
+  </tr>
+  <tr *ngFor="let income of incomes, index as i">
+    <td>{{i+1}}</td>
+    <td>{{income.name}}</td>
+    <td>{{income.gender}}</td>
+    <td>{{income.roll}}</td>
+    <td>{{income.income}}</td>
+    <td><button routerLink="/incomes/edit/{{income.id}}" >edit</button></td>
+    <td><button routerLink="/incomes/delete/{{income.id}}" >delete</button></td>
+  </tr>
+</table>
+

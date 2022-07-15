@@ -1,38 +1,28 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {ProductListComponent} from './product/product-list/product-list.component';
-import {ProductCreateComponent} from './product/product-create/product-create.component';
-import {ProductEditComponent} from './product/product-edit/product-edit.component';
-import {ProductDeleteComponent} from './product/product-delete/product-delete.component';
-import {CategoryListComponent} from './category/category-list/category-list.component';
-import {CategoryCreateComponent} from './category/category-create/category-create.component';
+import {IncomeListComponent} from './income/income-list/income-list.component';
+import {IncomeCreateComponent} from './income/income-create/income-create.component';
+import {IncomeDeleteComponent} from './income/income-delete/income-delete.component';
+import {IncomeUpdateComponent} from './income/income-update/income-update.component';
+
 
 
 const routes: Routes = [
-  {
-    path: `products`,
-    component: ProductListComponent
+  { path: `incomes`,
+    component: IncomeListComponent
   },
   {
-    path: `products/create`,
-    component: ProductCreateComponent
+    path: `incomes/create`,
+    component: IncomeCreateComponent
   },
   {
-    path: `products/edit/:id`,
-    component: ProductEditComponent
+    path: `incomes/update/:id`,
+    component: IncomeUpdateComponent
   },
   {
-    path: `products/delete/:id`,
-    component: ProductDeleteComponent
-  },
-  {
-    path: `categories`,
-    component: CategoryListComponent
-  },
-  {
-    path: `categories/create`,
-    component: CategoryCreateComponent
-  },
+    path: `incomes/delete/:id`,
+    component: IncomeDeleteComponent
+  }
 ];
 
 @NgModule({
