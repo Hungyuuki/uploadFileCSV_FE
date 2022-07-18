@@ -5,8 +5,6 @@ import {IncomeCreateComponent} from './income/income-create/income-create.compon
 import {IncomeDeleteComponent} from './income/income-delete/income-delete.component';
 import {IncomeUpdateComponent} from './income/income-update/income-update.component';
 
-
-
 const routes: Routes = [
   { path: `incomes`,
     component: IncomeListComponent

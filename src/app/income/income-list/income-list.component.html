@@ -1,4 +1,3 @@
-
 <a routerLink="/incomes/create">create a new income</a>
 <h1>Income list</h1>
 <table>
@@ -16,7 +15,7 @@
     <td>{{income.gender}}</td>
     <td>{{income.roll}}</td>
     <td>{{income.income}}</td>
-    <td><button routerLink="/incomes/edit/{{income.id}}" >edit</button></td>
+    <td><button routerLink="/incomes/update/{{income.id}}">edit</button></td>
     <td><button routerLink="/incomes/delete/{{income.id}}" >delete</button></td>
   </tr>
 </table>

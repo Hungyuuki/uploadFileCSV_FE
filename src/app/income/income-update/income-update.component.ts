@@ -3,7 +3,6 @@ import {Income} from '../../model/Income';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {IncomeService} from '../../service/income.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
-import {AngularFireStorage} from '@angular/fire/storage';
 
 @Component({
   selector: 'app-income-update',

@@ -1,4 +1,4 @@
-<a routerLink="/incomes">List</a>
+<a routerLink="/incomes">Danh sách thu nhập</a>
 <h2>Edit</h2>
 <form [formGroup]="incomeForm" (ngSubmit)="updateIncome()">
   <div>
@@ -30,4 +30,5 @@
     <input type="text" id="income" name="income" formControlName="income">
     <p style="color: red" [hidden]="incomeUpdate.valid || !incomeUpdate.touched">description is required</p>
   </div>
+  <button>Update</button>
 </form>
